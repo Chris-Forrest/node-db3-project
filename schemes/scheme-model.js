@@ -34,7 +34,6 @@ function update(changes,id){
    return db("schemes")
    .where({ id })
    .update(changes)
-   .first()
 };
 
 function remove(id){
