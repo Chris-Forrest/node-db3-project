@@ -22,7 +22,7 @@ function findById(id){
 };
 
 function findSteps(id){
-    return db("steps")
+    return db("steps").where({ scheme_id : id})
 };
 
 function add(data){
@@ -42,6 +42,7 @@ function remove(id){
     .del()
 };
 
-function addStep(){
-
+function addStep(step, scheme_id){
+    return db("steps")
+    .insert({...step, scheme_id})
 };
